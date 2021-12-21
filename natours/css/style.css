@@ -73,7 +73,9 @@ body {
 
 .text-box {
     position: absolute;
-    top: 50%; 
+    /* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
+    top: 40%; 
     left: 50%;
     background-color: red;
+    transform: translate(-50%, -50%);
 }
