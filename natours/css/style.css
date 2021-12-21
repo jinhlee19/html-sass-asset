@@ -37,7 +37,7 @@ body {
     /* 이미지를 상단 기준으로 고정 - 뷰포트 하단의 이미지만 변경 또는 Crop됨  */
     background-position: top;
     /* clip-path: 각 x,y 포인트를 시계방향으로 */
-    clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
+    clip-path: polygon(0 0,100% 0,100% 90%,0 100%);
     /* position으로 logo-box의 기준을 준다. */
     position:relative;
 }
@@ -52,7 +52,7 @@ body {
 
 .logo {
     /* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
-    height: 35px;
+    height: 3.5rem;
 }
 .logo-box:hover .logo{
     animation: moveInRight 1s ease-out;
@@ -62,7 +62,8 @@ body {
     color:#fff;
     text-transform: uppercase;
     /* 애니메이션 마지막에 흔들리는 현상 방지 -> backface-visibility: hidden; */
-}
+    margin-bottom: 6rem;
+} 
 
 .heading-primary-main {
     display: block;
@@ -72,7 +73,7 @@ body {
     /* 하단에 작성한 애니메이션을 불러오려면 html이 아닌 이곳! 
     이름, 지연, 재생시간 등을 설정 참고 */
     animation-name: moveInLeft;
-    animation-duration: 2s;
+    animation-duration: 2s; 
     
     /* animation-delay: 2s; */
     
@@ -98,18 +99,18 @@ body {
     left: 50%;
     /* background-color: red; */
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 @keyframes moveInLeft {
     0%{
         opacity: 0;
         /* translateX(좌우 이동) : (-)는 좌, (+)는 우에서 나타남. -> 기준점 반영) */
-        transform: translateX(-100px);
-        
+        transform: translateX(-10rem);
     }
     80%{
         /* 역시나 기준점을 사용 (어디까지 움직일지에 대한 위치 기준 px. ) X의 기준을 사용해서  */
-        transform: translateX(10px);
+        transform: translateX(1rem);
         /* transform: rotate(17deg); */
     }
     100%{
@@ -122,14 +123,40 @@ body {
 @keyframes moveInRight {
     0%{
         opacity: 0;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
     80%{
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     100%{
         opacity: 1;
         transform: translate(0)
     }
     
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /* inline-block으로 패딩 마진이 적용되는 박스모델로 만들어주기 */
+    display: inline-block;
+    border-radius: 10rem;
+    /* animation을 한곳에 때려넣는 transition으로 대체 - btn:hover, active 상태의 애니메이션 적용*/
+    transition: all .2s;
+
+}
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+.btn:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
 }
