@@ -70,3 +70,10 @@ body {
     font-size: 2rem;
     letter-spacing: 1.7rem;
 }
+
+.text-box {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    background-color: red;
+}
