@@ -49,14 +49,19 @@ body {
     left: 40px;
 }
 
+
 .logo {
     /* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
     height: 35px;
+}
+.logo-box:hover .logo{
+    animation: moveInRight 1s ease-out;
 }
 
 .heading-primary {
     color:#fff;
     text-transform: uppercase;
+    /* 애니메이션 마지막에 흔들리는 현상 방지 -> backface-visibility: hidden; */
 }
 
 .heading-primary-main {
@@ -64,11 +69,26 @@ body {
     font-size: 6rem;
     font-weight: 700;
     letter-spacing: 3.5rem;
+    /* 하단에 작성한 애니메이션을 불러오려면 html이 아닌 이곳! 
+    이름, 지연, 재생시간 등을 설정 참고 */
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    
+    /* animation-delay: 2s; */
+    
+    /* 기타 예시설정들 */
+    /*시작은 느리고 이후 빠르게*/
+    /* animation-timing-function: ease-in;     */
+    animation-timing-function: ease-out;
+    /* 애니메이션 반복 */
+    /* animation-iteration-count: 3; */
 }
 .heading-primary-sub {
     display: block;
     font-size: 2rem;
     letter-spacing: 1.7rem;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: moveInRight 2s ease-out;
 }
 
 .text-box {
@@ -76,6 +96,40 @@ body {
     /* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
     top: 40%; 
     left: 50%;
-    background-color: red;
+    /* background-color: red; */
     transform: translate(-50%, -50%);
+}
+
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        /* translateX(좌우 이동) : (-)는 좌, (+)는 우에서 나타남. -> 기준점 반영) */
+        transform: translateX(-100px);
+        
+    }
+    80%{
+        /* 역시나 기준점을 사용 (어디까지 움직일지에 대한 위치 기준 px. ) X의 기준을 사용해서  */
+        transform: translateX(10px);
+        /* transform: rotate(17deg); */
+    }
+    100%{
+        opacity: 1;
+        /* 도착점이므로 0 */
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0)
+    }
+    
 }
