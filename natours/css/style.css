@@ -8,9 +8,13 @@ Dark green: #28b485
 */
 
 /* Reset */
-* {
+*,
+*::after
+**::before {
 	margin: 0;
 	padding: 0;
+	/* !!! box-sizing의 기본을 상속으로 둠으로써 body에 있는 box-sizing으로 하위 요소 및 자식에게 물려주도록 한다. 
+	(box-sizing 기본값 자체가 inherit속성을 갖도록 만들어줌) */
 	box-sizing: inherit;
 }
 
@@ -47,18 +51,18 @@ body {
 	position: relative;
 }
 
-.logo-box {
+.header__logo-box {
 	/* header의 relative를 레퍼런스로 하는 기준점으로 top과 left의 40px 주기 */
 	position: absolute;
-	top: 40px;
-	left: 40px;
+	top: 4rem;
+	left: 4rem;
 }
 
-.logo {
+.header__logo {
 	/* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
 	height: 3.5rem;
 }
-.logo-box:hover .logo {
+.header__logo-box:hover .logo {
 	animation: moveInRight 1s ease-out;
 }
 
@@ -69,7 +73,7 @@ body {
 	margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
 	display: block;
 	font-size: 6rem;
 	font-weight: 700;
@@ -88,7 +92,7 @@ body {
 	/* 애니메이션 반복 */
 	/* animation-iteration-count: 3; */
 }
-.heading-primary-sub {
+.heading-primary--sub {
 	display: block;
 	font-size: 2rem;
 	letter-spacing: 1.7rem;
@@ -96,7 +100,7 @@ body {
 	animation: moveInRight 2s ease-out;
 }
 
-.text-box {
+.header__text-box {
 	position: absolute;
 	/* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
 	top: 40%;
@@ -140,6 +144,7 @@ body {
 
 .btn:link,
 .btn:visited {
+	font-size: 1.6rem;
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 1.5rem 4rem;
@@ -151,7 +156,7 @@ body {
 	position: relative;
     animation: moveInBottom 2s;
 }
-.btn-white {
+.btn--white {
 	background-color: #fff;
 	color: #777;
 }
@@ -172,7 +177,7 @@ body {
 	/* - treated as child of btn  */
 	height: 100%;
 	width: 100%;
-	border-radius: 100px;
+	border-radius: 10rem;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -181,7 +186,7 @@ body {
 
 }
 
-.btn-white::after {
+.btn--white::after {
 	background-color: #fff;
 }
 
@@ -193,7 +198,7 @@ body {
 @keyframes moveInBottom {
     0%{
         opacity: 0;
-        transform: translateY(10rem);
+        transform: translateY(3rem);
     }
     100% {
         opacity: 1;
@@ -202,7 +207,7 @@ body {
 }
 
 /* 또는 btn에 추가해줌 - 141 line 참고 */
-.btn-animated {
+.btn--animated {
     /* animation: moveInBottom 1s ease-out .75s; */
     /* delay로 인한 처리 animation fill mode - backwards 라는 옵션이 딜레이 상태 시간동안 0%의 keyframe 상태로 유지시켜줌. */
     animation-fill-mode: backwards; 
