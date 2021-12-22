@@ -1,0 +1,39 @@
+.header {
+	height: 95vh;
+	background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba($color-primary-dark, 0.8)
+		),
+		url(../img/hero.jpg);
+	background-size: cover;
+	/* 이미지를 상단 기준으로 고정 - 뷰포트 하단의 이미지만 변경 또는 Crop됨  */
+	background-position: top;
+	/* clip-path: 각 x,y 포인트를 시계방향으로 */
+	clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+	/* position으로 logo-box의 기준을 준다. */
+	position: relative;
+	&__logo-box {
+		/* header의 relative를 레퍼런스로 하는 기준점으로 top과 left의 40px 주기 */
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	}
+
+	&__logo {
+		/* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
+		height: 3.5rem;
+	}
+	&__logo-box:hover .logo {
+		animation: moveInRight 1s ease-out;
+	}
+	&__text-box {
+		position: absolute;
+		/* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
+		top: 40%;
+		left: 50%;
+		/* background-color: red; */
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+}

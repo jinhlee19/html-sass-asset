@@ -1,0 +1,56 @@
+.btn {
+	&:link,
+	&:visited {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		/* inline-block으로 패딩 마진이 적용되는 박스모델로 만들어주기 */
+		display: inline-block;
+		border-radius: 10rem;
+		/* animation을 한곳에 때려넣는 transition으로 대체 - btn:hover, active 상태의 애니메이션 적용*/
+		transition: all 0.2s;
+		position: relative;
+		animation: moveInBottom 2s;
+	}
+	&--white {
+		background-color: $color-white;
+		color: $color-gray-dark;
+		&::after {
+			background-color: $color-white;
+		}
+	}
+
+	&:hover {
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+		&::after {
+			transform: scaleX(1.5) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+	&:active {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	}
+	// pseudo-element
+	&::after {
+		/* pseudo - 항상 content를 명시 */
+		content: "";
+		display: inline-block;
+		/* - treated as child of btn  */
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+	&--animated {
+		animation: moveInBottom 1s ease-out 0.75s;
+		/* delay로 인한 처리 animation fill mode - backwards 라는 옵션이 딜레이 상태 시간동안 0%의 keyframe 상태로 유지시켜줌. */
+		animation-fill-mode: backwards;
+	}
+}

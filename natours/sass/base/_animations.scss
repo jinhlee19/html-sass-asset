@@ -1,0 +1,40 @@
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		/* translateX(좌우 이동) : (-)는 좌, (+)는 우에서 나타남. -> 기준점 반영) */
+		transform: translateX(-10rem);
+	}
+	80% {
+		/* 역시나 기준점을 사용 (어디까지 움직일지에 대한 위치 기준 px. ) X의 기준을 사용해서  */
+		transform: translateX(1rem);
+		/* transform: rotate(17deg); */
+	}
+	100% {
+		opacity: 1;
+		/* 도착점이므로 0 */
+		transform: translate(0);
+	}
+}
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+	80% {
+		transform: translateX(-1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
