@@ -51,21 +51,29 @@ body {
 	clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 	/* position으로 logo-box의 기준을 준다. */
 	position: relative;
-}
+	&__logo-box {
+		/* header의 relative를 레퍼런스로 하는 기준점으로 top과 left의 40px 주기 */
+		position: absolute;
+		top: 4rem;
+		left: 4rem;
+	}
 
-.header__logo-box {
-	/* header의 relative를 레퍼런스로 하는 기준점으로 top과 left의 40px 주기 */
-	position: absolute;
-	top: 4rem;
-	left: 4rem;
-}
-
-.header__logo {
-	/* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
-	height: 3.5rem;
-}
-.header__logo-box:hover .logo {
-	animation: moveInRight 1s ease-out;
+	&__logo {
+		/* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
+		height: 3.5rem;
+	}
+	&__logo-box:hover .logo {
+		animation: moveInRight 1s ease-out;
+	}
+	&__text-box {
+		position: absolute;
+		/* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
+		top: 40%;
+		left: 50%;
+		/* background-color: red; */
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
 }
 
 .heading-primary {
@@ -73,43 +81,32 @@ body {
 	text-transform: uppercase;
 	/* 애니메이션 마지막에 흔들리는 현상 방지 -> backface-visibility: hidden; */
 	margin-bottom: 6rem;
-}
+	&--main {
+		display: block;
+		font-size: 6rem;
+		font-weight: 700;
+		letter-spacing: 3.5rem;
+		/* 하단에 작성한 애니메이션을 불러오려면 html이 아닌 이곳! 
+        이름, 지연, 재생시간 등을 설정 참고 */
+		animation-name: moveInLeft;
+		animation-duration: 2s;
 
-.heading-primary--main {
-	display: block;
-	font-size: 6rem;
-	font-weight: 700;
-	letter-spacing: 3.5rem;
-	/* 하단에 작성한 애니메이션을 불러오려면 html이 아닌 이곳! 
-    이름, 지연, 재생시간 등을 설정 참고 */
-	animation-name: moveInLeft;
-	animation-duration: 2s;
+		/* animation-delay: 2s; */
 
-	/* animation-delay: 2s; */
-
-	/* 기타 예시설정들 */
-	/*시작은 느리고 이후 빠르게*/
-	/* animation-timing-function: ease-in;     */
-	animation-timing-function: ease-out;
-	/* 애니메이션 반복 */
-	/* animation-iteration-count: 3; */
-}
-.heading-primary--sub {
-	display: block;
-	font-size: 2rem;
-	letter-spacing: 1.7rem;
-	/* animation: name duration timing-function delay iteration-count direction fill-mode; */
-	animation: moveInRight 2s ease-out;
-}
-
-.header__text-box {
-	position: absolute;
-	/* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
-	top: 40%;
-	left: 50%;
-	/* background-color: red; */
-	transform: translate(-50%, -50%);
-	text-align: center;
+		/* 기타 예시설정들 */
+		/*시작은 느리고 이후 빠르게*/
+		/* animation-timing-function: ease-in;     */
+		animation-timing-function: ease-out;
+		/* 애니메이션 반복 */
+		/* animation-iteration-count: 3; */
+	}
+	&--sub {
+		display: block;
+		font-size: 2rem;
+		letter-spacing: 1.7rem;
+		/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+		animation: moveInRight 2s ease-out;
+	}
 }
 
 @keyframes moveInLeft {
@@ -143,57 +140,61 @@ body {
 		transform: translate(0);
 	}
 }
+.btn {
+	&:link,
+	&:visited {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		/* inline-block으로 패딩 마진이 적용되는 박스모델로 만들어주기 */
+		display: inline-block;
+		border-radius: 10rem;
+		/* animation을 한곳에 때려넣는 transition으로 대체 - btn:hover, active 상태의 애니메이션 적용*/
+		transition: all 0.2s;
+		position: relative;
+		animation: moveInBottom 2s;
+	}
+	&--white {
+		background-color: $color-white;
+		color: $color-gray-dark;
+		&::after {
+			background-color: $color-white;
+		}
+	}
 
-.btn:link,
-.btn:visited {
-	font-size: 1.6rem;
-	text-transform: uppercase;
-	text-decoration: none;
-	padding: 1.5rem 4rem;
-	/* inline-block으로 패딩 마진이 적용되는 박스모델로 만들어주기 */
-	display: inline-block;
-	border-radius: 10rem;
-	/* animation을 한곳에 때려넣는 transition으로 대체 - btn:hover, active 상태의 애니메이션 적용*/
-	transition: all 0.2s;
-	position: relative;
-	animation: moveInBottom 2s;
-}
-.btn--white {
-	background-color: $color-white;
-	color: $color-gray-dark;
-}
-
-.btn:hover {
-	transform: translateY(-0.3rem);
-	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-	transform: translateY(-0.1rem);
-	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-// pseudo-element
-.btn::after {
-	/* pseudo - 항상 content를 명시 */
-	content: "";
-	display: inline-block;
-	/* - treated as child of btn  */
-	height: 100%;
-	width: 100%;
-	border-radius: 10rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	transition: all 0.4s;
-}
-
-.btn--white::after {
-	background-color: $color-white;
-}
-
-.btn:hover::after {
-	transform: scaleX(1.5) scaleY(1.6);
-	opacity: 0;
+	&:hover {
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+		&::after {
+			transform: scaleX(1.5) scaleY(1.6);
+			opacity: 0;
+		}
+	}
+	&:active {
+		transform: translateY(-0.1rem);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	}
+	// pseudo-element
+	&::after {
+		/* pseudo - 항상 content를 명시 */
+		content: "";
+		display: inline-block;
+		/* - treated as child of btn  */
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+	&--animated {
+		animation: moveInBottom 1s ease-out 0.75s;
+		/* delay로 인한 처리 animation fill mode - backwards 라는 옵션이 딜레이 상태 시간동안 0%의 keyframe 상태로 유지시켜줌. */
+		animation-fill-mode: backwards;
+	}
 }
 
 @keyframes moveInBottom {
@@ -205,10 +206,4 @@ body {
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
-
-.btn--animated {
-	animation: moveInBottom 1s ease-out 0.75s;
-	/* delay로 인한 처리 animation fill mode - backwards 라는 옵션이 딜레이 상태 시간동안 0%의 keyframe 상태로 유지시켜줌. */
-	animation-fill-mode: backwards;
 }
