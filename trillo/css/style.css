@@ -105,7 +105,7 @@ ul, li {
   .side-nav__item {
     position: relative; }
     .side-nav__item:not(:last-child) {
-      margin-bottom: .5rem; }
+      margin-bottom: 0.5rem; }
   .side-nav__item::before {
     content: "";
     position: absolute;
@@ -115,9 +115,12 @@ ul, li {
     width: 3px;
     background-color: #eb2f64;
     transform: scaleY(0);
-    transition: transform 1s; }
-  .side-nav__item:hover::before {
-    transform: scaleY(1); }
+    transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.1s; }
+  .side-nav__item:hover::before, .side-nav__item--active::before {
+    transform: scaleY(1);
+    width: 100%; }
+  .side-nav__item:active::before {
+    background-color: #FF3366; }
   .side-nav__link:link, .side-nav__link:visited {
     color: #faf9f9;
     text-decoration: none;
@@ -125,7 +128,9 @@ ul, li {
     display: block;
     padding: 1.5rem 3rem;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    position: relative;
+    z-index: 10; }
   .side-nav__icon {
     width: 1.75rem;
     height: 1.75rem;
