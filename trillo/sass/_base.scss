@@ -4,7 +4,7 @@
 	padding: 0;
 }
 
-*,
+*, 
 *::before,
 *::after {
 	box-sizing: inherit;
@@ -22,3 +22,6 @@ body {
 	color: $color-grey-dark-2;
 }
 
+ul, li {
+	list-style: none;
+}

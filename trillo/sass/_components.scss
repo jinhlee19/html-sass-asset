@@ -103,24 +103,54 @@
 		border-radius: 50%;
 		margin-right: 1rem;
 	}
-
 }
 
 //////////////////////////////////////////////
 // SIDE NAVIGATION
 
-
-
 .side-nav {
-	&__item{
+	font-size: 1.4rem;
+	text-decoration: none;
+	// ul, li - _base.scss 에서 없애주기.
+	margin-top: 3.5rem;
 
+	&__item {
+		position: relative;
+		&:not(:last-child){
+			margin-bottom: .5rem;
+		}
 	}
-	&__link{
-
+	&__item::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 3px;
+		background-color: $color-primary;
+		transform: scaleY(0);
+		transition: transform 1s;
 	}
-	&__icon{
+	&__item:hover::before {
+		transform: scaleY(1);
+	}
+	&__link:link,
+	&__link:visited {
+		color: $color-grey-light-1;
+		text-decoration: none;
+		text-transform: uppercase;
+		display: block;
+		padding: 1.5rem 3rem;
+		display: flex;
+		align-items: center;
+	}
+	&__icon {
 		width: 1.75rem;
 		height: 1.75rem;
+		margin-right: 2rem;
+		// current Color gets a color from inherited color property. color tester below
+		// color: blue;
+		fill: currentColor;
 	}
 }
 
@@ -128,5 +158,5 @@
 	font-size: 1.2rem;
 	color: $color-grey-light-4;
 	text-align: center;
-	padding: 2.5rem;;
+	padding: 2.5rem;
 }
