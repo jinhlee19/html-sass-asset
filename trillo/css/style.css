@@ -143,6 +143,20 @@ ul, li {
   text-align: center;
   padding: 2.5rem; }
 
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%; }
+
+.overview {
+  display: flex; }
+  .overview__stars {
+    margin-right: auto; }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: #eb2f64; }
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -170,7 +184,6 @@ ul, li {
   justify-content: space-between; }
 
 .hotel-view {
-  background-color: olive;
   flex: 1 0 auto;
   height: 80rem;
   flex: 1; }
