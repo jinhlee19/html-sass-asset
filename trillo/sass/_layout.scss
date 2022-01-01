@@ -36,7 +36,8 @@
 }
 
 .detail {
-	display: flex;
+	font-size: 1.4rem;
+    display: flex;
 	padding: 4.5rem;
 	background-color: $color-grey-light-1;
 	border-bottom: $line;
@@ -47,11 +48,13 @@
 	box-shadow: $shadow-light;
 	padding: 3rem;
 	flex: 0 0 60%;
-	margin-right: 4.5rem;
-    font-size: 1.4rem;
+	margin-right: 4.5rem;   
 }
 
 .user-reviews {
-	background-color: yellowgreen;
+	// background-color: yellowgreen;
 	flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
