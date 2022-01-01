@@ -170,7 +170,7 @@ ul, li {
     display: flex;
     align-items: center; }
     .overview__location__icon-location {
-      margin-left: .5rem; }
+      margin-left: 0.5rem; }
   .overview__rating {
     background-color: #eb2f64;
     color: #fff;
@@ -186,7 +186,7 @@ ul, li {
     font-weight: 300;
     margin-bottom: -3px; }
   .overview__rating-count {
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-transform: uppercase; }
 
 .btn-inline {
@@ -197,7 +197,7 @@ ul, li {
   display: inline-block;
   padding-bottom: 2px;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   background-color: transparent; }
   .btn-inline:hover {
     color: #333;
@@ -210,6 +210,47 @@ ul, li {
     transform: scale(1.05); }
   100% {
     transform: scale(1); } }
+
+.paragraph:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.list {
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: 1px solid #f4f2f2;
+  border-bottom: 1px solid #f4f2f2;
+  display: flex;
+  flex-wrap: wrap; }
+  .list__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem; }
+  .list__item::before {
+    content: "";
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.7rem;
+    background-color: #eb2f64;
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover; }
+
+.recommend {
+  font-size: 1.3rem;
+  color: #999;
+  display: flex;
+  align-items: center; }
+  .recommend__count {
+    margin-right: auto; }
+  .recommend__photo {
+    box-sizing: content-box;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 3px solid #fff; }
+    .recommend__photo:not(:last-child) {
+      margin-right: -1.15rem; }
 
 .container {
   max-width: 120rem;
