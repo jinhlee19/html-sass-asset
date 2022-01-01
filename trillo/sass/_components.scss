@@ -130,10 +130,11 @@
 		background-color: $color-primary;
 		transform: scaleY(0);
 		// transition: transform 0.2s, width 0.4s 0.2s;
-		transition: transform 0.2s, width .4s cubic-bezier(1,0,0,1) 0.2s, background-color .1s;
+		transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+			background-color 0.1s;
 		// transform-origin: bottom;
 	}
-	
+
 	&__item:hover::before,
 	&__item--active::before {
 		transform: scaleY(1);
@@ -172,27 +173,33 @@
 	padding: 2.5rem;
 }
 
-
 //////////////////////////////////////////////
 // Gallery
-	
+
 .gallery {
 	display: flex;
-	&__photo{
+	&__photo {
 		width: 100%;
-	} 
+	}
 }
 
 //////////////////////////////////////////////
 // Overview
 
-.overview{
+.overview {
 	display: flex;
+	border-bottom: 1px solid $color-grey-light-2;
+	align-items: center;
 	&__heading {
-
+		font-size: 2.25rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		padding: 1.5rem 3rem;
 	}
 
-	&__stars{
+	&__stars {
+		display: flex;
 		// flexbox에서의 trick - margin-right ***
 		// flex:1;
 		margin-right: auto;
@@ -200,22 +207,75 @@
 	}
 
 	&__icon-star,
-	&__icon-location{
+	&__icon-location {
 		width: 1.75rem;
 		height: 1.75rem;
 		fill: $color-primary;
 	}
-	
-	&__location{
-		
-	}
-	&__rating{
-		
-	}
-	&__rating-average{
-		
-	}
-	&__rating-count{
 
+	&__location {
+		font-size: 1.2rem;
+		display: flex;
+		align-items: center;
+	&__icon-location {
+		margin-left: .5rem;
+	}
+	}
+	&__rating {
+		background-color: $color-primary;
+		color: #fff;
+		margin-left: 3rem;
+		align-self: stretch ;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 0 2.25rem; 
+	}
+	&__rating-average {
+		font-size: 2.25rem;
+		font-weight: 300;
+		margin-bottom: -3px;
+	}
+	&__rating-count {
+		font-size: .8rem;
+		text-transform: uppercase;
+	}
+}
+
+//////////////////////////////////////////////
+// Button-Inline
+
+.btn-inline {
+	border: none;
+	color: $color-primary;
+	font-size: inherit;
+	// currentColor : hover시 텍스트에 들어간 색에 맞춰서
+	border-bottom: 1px solid currentColor;
+	display: inline-block;
+	padding-bottom: 2px;
+	cursor: pointer;
+	transition: all .2s;
+	background-color: transparent;
+
+	&:hover {
+		color: $color-grey-dark-1;
+		animation: pulsate 1s infinite;
+	}
+	&:active {
+		// outline: none;
+		
+	}
+}
+
+@keyframes pulsate {
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.05);
+	}
+	100%{
+		transform: scale(1);
 	}
 }
