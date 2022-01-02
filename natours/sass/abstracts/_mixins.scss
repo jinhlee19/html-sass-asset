@@ -1,0 +1,8 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table; // 클리어픽스의 표준 display값 참고.
+        clear: both;
+    }
+}
+// clearfix 과정 - &::after -> content: ""; -> display: table; (standard), clear: both;

@@ -11,6 +11,8 @@ body {
 	color: $color-white;
 	text-transform: uppercase;
 	/* 애니메이션 마지막에 흔들리는 현상 방지 -> backface-visibility: hidden; */
+	// backface-visibility: hidden;
+
 	margin-bottom: 6rem;
 	&--main {
 		display: block;
