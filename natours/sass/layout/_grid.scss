@@ -3,7 +3,7 @@
 	max-width: $grid-width;
 	background-color: #eee;
 	margin: 0 auto;
-	color: #fff;
+	// color: #fff;
 	&:not(:last-child) {
 		margin-bottom: $gutter-vertical;
 	}
@@ -57,7 +57,7 @@
 ////// Flex
 .row {
     [class^="col-"] {
-		background-color: orangered;
+		// background-color: orangered;
 		&:not(:last-child) {
 			margin-right: $gutter-horizontal;
 		}

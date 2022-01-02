@@ -10,7 +10,7 @@
 	/* 이미지를 상단 기준으로 고정 - 뷰포트 하단의 이미지만 변경 또는 Crop됨  */
 	background-position: top;
 	/* clip-path: 각 x,y 포인트를 시계방향으로 */
-	clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	/* position으로 logo-box의 기준을 준다. */
 	position: relative;
 	&__logo-box {
