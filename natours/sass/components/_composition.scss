@@ -5,17 +5,31 @@
 		box-shadow: 0 1.5rem 4rem rgba(#000, 0.4);
 		border-radius: 2px;
 		position: absolute;
+		z-index: 10;
+		transition: all 0.2s;
+        outline-offset: 2rem;
 		&--p1 {
-            left: 0;
-            top:-2rem;    
+			left: 0;
+			top: -2rem;
+		} 
+		&--p2 {
+			left: 40%;
+			top: 2rem;
 		}
-        &--p2 {
-            left: 20%; 
-            top:2rem;    
+		&--p3 {
+			left: 20%;
+			top: 10rem;
 		}
-        &--p3 {
-            left: 0; 
-            top: 10rem;    
+		&:hover,
+		&:active {
+            outline: 5rem solid $color-primary;
+			transform: scale(1.05);
+			box-shadow: 0 2.5rem 4rem rgba(#000, 0.4);
+			z-index: 20;
 		}
 	}
+    //  ***** hover하면 선택한 대상을 제외한 나머지
+    &:hover &__photo:not(:hover) {
+        transform: scale(.95);
+    }
 }
