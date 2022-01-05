@@ -57,6 +57,7 @@
 ////// Flex
 .row {
     [class^="col-"] {
+		
 		// background-color: orangered;
 		&:not(:last-child) {
 			margin-right: $gutter-horizontal;
@@ -64,6 +65,6 @@
     }
 	display: flex;
 	& div {
-		flex: 1 0 auto;
+		flex: 1;
 	}
 }

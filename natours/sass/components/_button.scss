@@ -1,7 +1,7 @@
 .btn {
 	&:link,
 	&:visited {
-		font-size: 1.6rem;
+		font-size: $default-font-size;
 		text-transform: uppercase;
 		text-decoration: none;
 		padding: 1.5rem 4rem;
@@ -52,5 +52,28 @@
 		animation: moveInBottom 1s ease-out 0.75s;
 		/* delay로 인한 처리 animation fill mode - backwards 라는 옵션이 딜레이 상태 시간동안 0%의 keyframe 상태로 유지시켜줌. */
 		animation-fill-mode: backwards;
+	}
+}
+
+.btn-text {
+	&:link,
+	&:visited{
+		font-size: $default-font-size;
+		color: $color-primary;
+		display: inline-block;
+		text-decoration: none;
+		border-bottom: 1px solid $color-primary; 
+		padding: 3px; 
+		transition: all .6s;
+	}	
+	&:hover {
+		background-color: $color-primary;
+		color: $color-white;
+		box-shadow: 0 1rem 2rem rgba(#000, .15);
+		transform: translateY(-2px);
+	}
+	&:active {
+		box-shadow: 0 1rem 2rem rgba(#000, .15);
+		transform: translateY(0px);
 	}
 }
