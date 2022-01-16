@@ -126,6 +126,11 @@ body {
   padding: 25rem 0;
   margin-top: -20vh; }
 
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
+  background-size: cover; }
+
 .row {
   max-width: 114rem;
   background-color: #eee;
@@ -232,7 +237,7 @@ body {
       left: 20%;
       top: 10rem; }
     .composition__photo:hover, .composition__photo:active {
-      outline: 5rem solid #7ed56f;
+      outline: 1rem solid #7ed56f;
       transform: scale(1.05);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.4);
       z-index: 20; }
