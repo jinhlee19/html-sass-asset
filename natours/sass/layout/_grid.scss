@@ -1,7 +1,7 @@
 .row {
 	// viewport가 충분하지 않을경우 가능한 공간을 100%의 값으로 채운다.
 	max-width: $grid-width;
-	background-color: #eee;
+	// background-color: #eee;
 	margin: 0 auto;
 	// color: #fff;
 	&:not(:last-child) {
@@ -56,8 +56,8 @@
 ////////////////////////////////////////////////////////////////////////
 ////// Flex
 .row {
+	
     [class^="col-"] {
-		
 		// background-color: orangered;
 		&:not(:last-child) {
 			margin-right: $gutter-horizontal;
