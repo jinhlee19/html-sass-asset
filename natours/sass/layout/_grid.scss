@@ -1,3 +1,61 @@
+// .row {
+// 	// viewport가 충분하지 않을경우 가능한 공간을 100%의 값으로 채운다.
+// 	max-width: $grid-width;
+// 	// background-color: #eee;
+// 	margin: 0 auto;
+// 	// color: #fff;
+// 	&:not(:last-child) {
+// 		margin-bottom: $gutter-vertical;
+// 	}
+// 	@include clearfix;
+
+	
+// 	////////////////////////////////////////////////////////////////////////
+// 	////// Calc Part - Float
+
+//     // Attribute Selector ***
+// 	// example - [alt="Logo"]
+// 	// ^=col -> all the attributes start with col
+// 	// *=col -> all the attributes contains col
+// 	// &=col -> end with
+
+// 	// [class^="col-"] {
+// 	// 	background-color: orangered;
+// 	// 	// row element가 float값을 가지게되면서 height값이 collapse된다. -> clearfix hack\
+// 	// 	float: left;
+// 	// 	&:not(:last-child) {
+// 	// 		margin-right: $gutter-horizontal;
+// 	// 	}
+// 	// }
+// 	// .col-1-of-2 {
+// 	// 	// calc로 여러가지 unit을 섞어서 사용할 수 있다.
+// 	// 	// Sass variable #{} 으로 감싸기.
+// 	// 	width: calc((100% - #{$gutter-horizontal}) / 2);
+// 	// }
+// 	// .col-1-of-3 {
+// 	// 	width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+// 	// }
+// 	// .col-1-of-4 {
+// 	//     width: calc((100% - #{$gutter-horizontal} * 3) / 4);
+// 	// }
+// 	// .col-2-of-3 {
+// 	//     width: calc(((100% - #{$gutter-horizontal} * 2) / 3) * 2 + #{$gutter-horizontal});
+// 	// }
+// 	// .col-2-of-4 {
+// 	//     width: calc((100% - #{$gutter-horizontal}) / 2);
+// 	// }
+// 	// .col-3-of-4 {
+// 	//     width: calc(((100% - #{$gutter-horizontal} * 3 ) / 4) * 3 + #{$gutter-horizontal} * 2);
+// 	// }
+// 	// // 전체 길이에서 거터 3개를 뺀 길이를 4등분 한것중에 3개의 칸을 거터 2개를 포함한 길이.
+// }
+
+// // .row:not()
+// // .row:last-child()
+
+////////////////////////////////////////////////////////////////////////
+////// Flex
+
 .row {
 	// viewport가 충분하지 않을경우 가능한 공간을 100%의 값으로 채운다.
 	max-width: $grid-width;
@@ -7,58 +65,8 @@
 	&:not(:last-child) {
 		margin-bottom: $gutter-vertical;
 	}
-	@include clearfix;
-
-	
-	////////////////////////////////////////////////////////////////////////
-	////// Calc Part - Float
-
-    // Attribute Selector ***
-	// example - [alt="Logo"]
-	// ^=col -> all the attributes start with col
-	// *=col -> all the attributes contains col
-	// &=col -> end with
-
-	// [class^="col-"] {
-	// 	background-color: orangered;
-	// 	// row element가 float값을 가지게되면서 height값이 collapse된다. -> clearfix hack\
-	// 	float: left;
-	// 	&:not(:last-child) {
-	// 		margin-right: $gutter-horizontal;
-	// 	}
-	// }
-	// .col-1-of-2 {
-	// 	// calc로 여러가지 unit을 섞어서 사용할 수 있다.
-	// 	// Sass variable #{} 으로 감싸기.
-	// 	width: calc((100% - #{$gutter-horizontal}) / 2);
-	// }
-	// .col-1-of-3 {
-	// 	width: calc((100% - #{$gutter-horizontal} * 2) / 3);
-	// }
-	// .col-1-of-4 {
-	//     width: calc((100% - #{$gutter-horizontal} * 3) / 4);
-	// }
-	// .col-2-of-3 {
-	//     width: calc(((100% - #{$gutter-horizontal} * 2) / 3) * 2 + #{$gutter-horizontal});
-	// }
-	// .col-2-of-4 {
-	//     width: calc((100% - #{$gutter-horizontal}) / 2);
-	// }
-	// .col-3-of-4 {
-	//     width: calc(((100% - #{$gutter-horizontal} * 3 ) / 4) * 3 + #{$gutter-horizontal} * 2);
-	// }
-	// // 전체 길이에서 거터 3개를 뺀 길이를 4등분 한것중에 3개의 칸을 거터 2개를 포함한 길이.
-}
-
-// .row:not()
-// .row:last-child()
-
-////////////////////////////////////////////////////////////////////////
-////// Flex
-
-////// 이 부분 참고 - 셀렉터
-.row {
 	margin-top: 5rem;
+	height: 100%;
     [class^="col-"] {
 		// background-color: orangered;
 		&:not(:last-child) {
@@ -67,6 +75,6 @@
     }
 	display: flex;
 	& div {
-		flex: 1 1 auto;
+		flex: 1;
 	}
 }
