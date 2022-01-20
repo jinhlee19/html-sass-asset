@@ -55,8 +55,10 @@
 
 ////////////////////////////////////////////////////////////////////////
 ////// Flex
+
+////// 이 부분 참고 - 셀렉터
 .row {
-	
+	margin-top: 5rem;
     [class^="col-"] {
 		// background-color: orangered;
 		&:not(:last-child) {
@@ -65,6 +67,6 @@
     }
 	display: flex;
 	& div {
-		flex: 1;
+		flex: 1 1 auto;
 	}
 }

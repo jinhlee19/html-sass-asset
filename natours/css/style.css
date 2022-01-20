@@ -135,6 +135,11 @@ body {
   .section-features > * {
     transform: skewY(7deg); }
 
+.section-tours {
+  background-color: #eee;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem; }
+
 .row {
   max-width: 114rem;
   margin: 0 auto; }
@@ -146,11 +151,12 @@ body {
     clear: both; }
 
 .row {
+  margin-top: 5rem;
   display: flex; }
   .row [class^="col-"]:not(:last-child) {
     margin-right: 6rem; }
   .row div {
-    flex: 1; }
+    flex: 1 1 auto; }
 
 .btn:link, .btn:visited {
   font-size: 1.6rem;
@@ -219,6 +225,13 @@ body {
 .btn-text:active {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(0px); }
+
+.card {
+  background-color: orangered;
+  height: 50rem;
+  transition: all 0.8s; }
+  .card:hover {
+    transform: rotateY(180deg); }
 
 .composition {
   position: relative; }
