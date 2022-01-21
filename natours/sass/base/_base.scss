@@ -1,5 +1,13 @@
+// 2 이러면 먹는데???
+* {
+	margin: 0;
+	padding: 0;
+}
+
+// 1 왜안먹지???
 *,
-*::after **::before {
+*::after,
+**::before {
 	margin: 0;
 	padding: 0;
 	/* !!! box-sizing의 기본을 상속으로 둠으로써 body에 있는 box-sizing으로 하위 요소 및 자식에게 물려주도록 한다. 
@@ -8,7 +16,7 @@
 }
 
 html {
-    // This defines what 1rem is
+	// This defines what 1rem is
 	font-size: 62.5%;
 }
 
