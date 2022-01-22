@@ -6,4 +6,12 @@
 	width: 100%;
 	z-index: -1;
     opacity: .15;
+    overflow: hidden;
+    &__content {
+        height: 100%;
+        width: 100%;
+        // object-fit** - filling entire parent white still maintaining ratio
+        // fill은 채워주지만 비율을 무시. 
+        object-fit: cover;
+    }
 }

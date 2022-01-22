@@ -250,7 +250,12 @@ body {
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .15; }
+  opacity: .15;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .card {
   perspective: 150rem;
@@ -395,7 +400,7 @@ body {
   margin: 0 auto;
   padding: 6rem;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
   font-size: 1.6rem;
   transform: skewX(-12deg); }

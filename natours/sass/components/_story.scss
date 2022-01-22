@@ -3,9 +3,10 @@
 	margin: 0 auto;
 	padding: 6rem;
 	box-shadow: 0 3rem 6rem rgba(#000, 0.1);
-	background-color: white;
+	background-color: rgba($color-white, .6);
 	border-radius: 3px;
 	font-size: $default-font-size;
+
 	// transform이 일부에만 들어가는 현상 - 값이 계산되지 않고 덮어씌워짐 ->
 	transform: skewX(-12deg);
 
