@@ -2,10 +2,10 @@
 	perspective: 150rem;
 	-moz-perspective: 150rem;
 	position: relative;
-	height: 51rem;
+	height: 52rem;
 
 	&__side {
-		height: 51rem;
+		height: 52rem;
 		background-color: orangered;
 
 		border-radius: 20px;
@@ -129,7 +129,6 @@
 	}
 	&__details {
 		padding: 3rem;
-		
 		ul {
 			list-style: none;
 			width: 80%;
@@ -168,5 +167,3 @@
 		font-weight: 100;
 	}
 }
-
-//.card:hover .card__side

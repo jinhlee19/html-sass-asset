@@ -1,0 +1,22 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    padding: 6rem;
+    box-shadow: 0 3rem 6rem rgba(#000, .1);
+    background-color: white;
+    border-radius: 3px;
+    font-size: $default-font-size;
+    display: flex;
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        background-color: orangered;
+        margin-right: 2rem;
+        // Clip-path로 만들기 + shape-outside 사용** 
+        // size of circle and the centered (position of) circle.
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+    }
+} 
