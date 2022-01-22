@@ -153,7 +153,7 @@ body {
 
 .section-stories {
   padding: 15rem;
-  background-color: #f7f7f7; }
+  position: relative; }
 
 .row {
   max-width: 114rem;
@@ -242,6 +242,15 @@ body {
 .btn-text:active {
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(0px); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .15; }
 
 .card {
   perspective: 150rem;
