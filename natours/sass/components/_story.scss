@@ -1,41 +1,67 @@
 .story {
-    width: 75%;
-    margin: 0 auto;
-    padding: 6rem;
-    box-shadow: 0 3rem 6rem rgba(#000, .1);
-    background-color: white;
-    border-radius: 3px;
-    font-size: $default-font-size;
-    // transform이 일부에만 들어가는 현상 - 값이 계산되지 않고 덮어씌워짐. 
-    transform: skewX(-12deg);
+	width: 75%;
+	margin: 0 auto;
+	padding: 6rem;
+	box-shadow: 0 3rem 6rem rgba(#000, 0.1);
+	background-color: white;
+	border-radius: 3px;
+	font-size: $default-font-size;
+	// transform이 일부에만 들어가는 현상 - 값이 계산되지 않고 덮어씌워짐 ->
+	transform: skewX(-12deg);
 
-    &>*{
-        transform: skewX(12deg);
-    }
+	& > * {
+		transform: skewX(12deg);
+	}
 
-    //  Story Section의 카드 좌측 이미지
-    &__shape {
-        width: 15rem;
-        height: 15rem;
-        background-color: orangered;
-        margin-right: 2rem;
-        // Clip-path로 만들기 + shape-outside 사용** 
-        // size of circle and the centered (position of) circle.
-        -webkit-shape-outside: circle(50% at 50% 50%);
-        shape-outside: circle(50% at 50% 50%);
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
-        // float으로 원에 따라 글자모양을 감싸게 해준다. 
-        float:left;
-        transform: translateX(-3rem);
-        
-    }
-    &__img {
-        // 둘중에 하나만 줘야 사진이 안늘어남.
-        // width: 100%;
-        height: 100%;
-    }
-    &__text{
+	//  Story Section의 카드 좌측 이미지
+	&__shape {
+		width: 15rem;
+		height: 15rem;
+		margin-right: 2rem;
+		// Clip-path로 만들기 + shape-outside 사용**
+		// size of circle and the centered (position of) circle.
+		-webkit-shape-outside: circle(50% at 50% 50%);
+		shape-outside: circle(50% at 50% 50%);
+		-webkit-clip-path: circle(50% at 50% 50%);
+		clip-path: circle(50% at 50% 50%);
+		// float으로 원에 따라 글자모양을 감싸게 해준다.
+		float: left;
+		transform: translateX(-3rem) skewX(12deg);
+        position:relative;
 
+	}
+	&__img {
+		// 둘중에 하나만 줘야 사진이 안늘어남.
+		// width: 100%;
+		height: 100%;
+        transform: translate(-4rem) scale(1.4);
+        transition: all .5s;
+	}
+	&__text {
+		transform: skewX(12deg);
+	}
+	&__caption {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		color: $color-white;
+		font-size: 1.7rem;
+		text-align: center;
+		// ANIMATION effect - story__shape 1
+		transform: translate(-50%, 20%);
+		opacity: 0;
+		transition: all .5s;
+        // fixing small glitch.
+        backface-visibility: hidden;
+	}
+	// ANIMATION effect - story__shape 2
+	&:hover &__caption {
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+    &:hover &__img {
+        transform: translate(-4rem) scale(1);
+        // filter 다양한 효과 테스트해보기 **
+        filter: blur(3px) brightness(90%);
     }
-} 
+}
