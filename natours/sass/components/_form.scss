@@ -45,9 +45,12 @@
 	}
 
 	&__radio-group {
-		width: 49%;
+		width: 40%;
 		display: inline-block;
 	}
+    &__radio-input {
+        display: none;
+    }
 
 	&__radio-label {
 		font-size: $default-font-size;
@@ -61,7 +64,7 @@
 		left: 0rem;
 		height: 2rem;
 		width: 2rem;
-		border: 5px solid $color-primary;
+		border: 2px solid $color-primary;
 		border-radius: 50%;
 		display: inline-block;
 

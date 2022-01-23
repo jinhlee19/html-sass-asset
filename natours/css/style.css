@@ -112,25 +112,31 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-sm {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-bottom-md {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-lg {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
+
+.u-margin-top-sm {
+  margin-top: 4rem !important; }
+
+.u-margin-top-md {
+  margin-top: 6rem !important; }
 
 .u-margin-top-lg {
-  margin-top: 8rem; }
+  margin-top: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-top: 10rem; }
+  margin-top: 10rem !important; }
 
 .section-about {
   background-color: #f7f7f7;
@@ -182,7 +188,7 @@ body {
   .row div {
     flex: 1; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -193,7 +199,9 @@ body {
   /* animation을 한곳에 때려넣는 transition으로 대체 - btn:hover, active 상태의 애니메이션 적용*/
   transition: all 0.2s;
   position: relative;
-  animation: moveInBottom 2s; }
+  animation: moveInBottom 2s;
+  border: none;
+  cursor: pointer; }
 
 .btn--white {
   background-color: #fff;
@@ -208,10 +216,10 @@ body {
   .btn--green::after {
     background-color: #7ed56f; }
 
-.btn:hover {
+.btn:hover, .btn:focus, .btn:active {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .btn:hover::after, .btn:focus::after, .btn:active::after {
     transform: scaleX(1.5) scaleY(1.6);
     opacity: 0; }
 
@@ -308,8 +316,11 @@ body {
   transform: translateY(-4rem); }
 
 .form__radio-group {
-  width: 49%;
+  width: 40%;
   display: inline-block; }
+
+.form__radio-input {
+  display: none; }
 
 .form__radio-label {
   font-size: 1.6rem;
@@ -323,7 +334,7 @@ body {
   left: 0rem;
   height: 2rem;
   width: 2rem;
-  border: 5px solid #7ed56f;
+  border: 2px solid #7ed56f;
   border-radius: 50%;
   display: inline-block; }
   .form__radio-button::after {

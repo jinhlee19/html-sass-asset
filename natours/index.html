@@ -318,12 +318,12 @@
 										<!-- 같은 이름으로 걸어줘야 한버튼씩 선택가능 - 객관식? -->
 										<input type="radio" class="form__radio-input" id="small" name="size">
 										<label for="small" class="form__radio-label">
-											<!-- Deco 용 span -->
+											<!-- Deco 용 span: 원래 버튼을 사용하지 않고 span으로 만든 버튼으로 연결 -->
 											<span class="form__radio-button"></span>
 											Small tour group
 										</label>
 									</div>
-									<div class="form__radio-group">
+									<div class="form__radio-group ">
 										<input type="radio" class="form__radio-input" id="large" name="size">
 										<label for="large" class="form__radio-label">
 											<span class="form__radio-button"></span>
@@ -331,7 +331,9 @@
 										</label>
 									</div>
 								</div>
-								
+								<div class="form__group u-margin-top-sm">
+									<button class="btn btn--green">Next step &rarr;</button>
+								</div>
 							</form>
 						</div>
 					</div>
