@@ -13,35 +13,74 @@
 		border-bottom: 3px solid transparent;
 		width: 75%;
 		display: block;
-        &:focus {
-            outline: none;
-            box-shadow: 0 1rem 2rem rgba(#000, 0.1);
-            border-bottom: 3px solid $color-primary;
-            // Safari and Chrome only
-            
-        }
-        // Input의 입력 형식이 잘못될 경우, 효과주기. 
-        &:focus:invalid {
-            border-bottom: 3px solid $color-secondary-dark;
-        }
-        &::-webkit-input-placeholder {
-            color: $color-gray-dark-2;
-        }
+		&:focus {
+			outline: none;
+			box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+			border-bottom: 3px solid $color-primary;
+			// Safari and Chrome only
+		}
+		// Input의 입력 형식이 잘못될 경우, 효과주기.
+		&:focus:invalid {
+			border-bottom: 3px solid $color-secondary-dark;
+		}
+		&::-webkit-input-placeholder {
+			color: $color-gray-dark-2;
+		}
 	}
-	
+
 	&__label {
-        font-size: 1.2rem;
-        font-weight: 500;
-        margin-left: 1rem;
-        margin-top: .7rem;
-        display: block;
-        transition: all .3s;
+		font-size: 1.2rem;
+		font-weight: 500;
+		margin-left: 1rem;
+		margin-top: 0.7rem;
+		display: block;
+		transition: all 0.3s;
 	}
-    // Adjacent Sibling Selector의 사용 - 부모 자식관계가 아닌 형제 관계, 
-    // element가 다음 형제의 값에 영향을 줄때 (엘리먼트간 효과 연결)
-    &__input:placeholder-shown + &__label {
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-4rem);
+	// Adjacent Sibling Selector의 사용 - 부모 자식관계가 아닌 형제 관계,
+	// element가 다음 형제의 값에 영향을 줄때 (엘리먼트간 효과 연결)
+	&__input:placeholder-shown + &__label {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4rem);
+	}
+
+	&__radio-group {
+		width: 49%;
+		display: inline-block;
+	}
+
+	&__radio-label {
+		font-size: $default-font-size;
+		cursor: pointer;
+		position: relative;
+		padding-left: 4.5rem;
+	}
+	&__radio-button {
+		position: absolute;
+		top: -0.5rem;
+		left: 0rem;
+		height: 2rem;
+		width: 2rem;
+		border: 5px solid $color-primary;
+		border-radius: 50%;
+		display: inline-block;
+
+		&::after {
+			content: "";
+			display: block;
+			height: 1.3rem;
+			width: 1.3rem;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: $color-primary;
+			opacity: 0;
+            transition: opacity .2s;
+		}
+	}
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
     }
 }
