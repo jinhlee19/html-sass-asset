@@ -1,0 +1,47 @@
+.form {
+	&__group {
+		margin-bottom: 2rem;
+	}
+	&__input {
+		font-size: 1.5rem;
+		font-family: inherit;
+		color: inherit;
+		padding: 1.5rem;
+		border-radius: 2px;
+		background-color: rgba($color-white, 0.5);
+		border: none;
+		border-bottom: 3px solid transparent;
+		width: 75%;
+		display: block;
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+            border-bottom: 3px solid $color-primary;
+            // Safari and Chrome only
+            
+        }
+        // Input의 입력 형식이 잘못될 경우, 효과주기. 
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary-dark;
+        }
+        &::-webkit-input-placeholder {
+            color: $color-gray-dark-2;
+        }
+	}
+	
+	&__label {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-left: 1rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+	}
+    // Adjacent Sibling Selector의 사용 - 부모 자식관계가 아닌 형제 관계, 
+    // element가 다음 형제의 값에 영향을 줄때 (엘리먼트간 효과 연결)
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+}
