@@ -10,7 +10,6 @@
 
 @import "pages/home";
 
-@import "layout/grid";
 @import "components/button";
 @import "components/bg-video";
 @import "components/form";
@@ -19,5 +18,8 @@
 @import "components/feature-box";
 @import "components/story";
 
+
+@import "layout/grid";
+@import "layout/navigation";
 @import "layout/footer";
 @import "layout/header";
