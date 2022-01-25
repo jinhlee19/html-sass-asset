@@ -636,7 +636,15 @@ body {
   top: 1.2rem; }
 
 .navigation__checkbox:checked + .navigation__button .navigation__icon {
-  background-color: transparent; }
+  background: transparent; }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-45deg); }
 
 .footer {
   background-color: #333;
