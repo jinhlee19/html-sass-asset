@@ -107,6 +107,7 @@
 			content: "";
 			position: absolute;
 			left: 0;
+			transition: all 0.2s;
 		}
 		&,
 		&::before,
@@ -119,6 +120,8 @@
 		}
 		&::before {
 			top: -1rem;
+			// 테스트용. 왼쪽 점을 기준으로 회전.
+			// transform-origin: left;
 		}
 		&::after {
 			top: 1rem;
@@ -135,10 +138,10 @@
 	}
 	&__checkbox:checked + &__button &__icon::before {
 		top: 0;
-		transform: rotate(45deg);
+		transform: rotate(135deg);
 	}
 	&__checkbox:checked + &__button &__icon::after {
 		top: 0;
-		transform: rotate(-45deg);
+		transform: rotate(-135deg);
 	}
 }
