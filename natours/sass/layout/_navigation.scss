@@ -2,6 +2,7 @@
 	&__checkbox {
 		display: none;
 	}
+	// 아래 배경 위로 위치하는 흰색 원버튼.
 	&__button {
 		background-color: $color-white;
 		height: 7rem;
@@ -11,29 +12,37 @@
 		right: 6rem;
 		border-radius: 50%;
 		z-index: 90;
+		box-shadow: $box-shadow-sm-2;
+		
 	}
+    // 원형으로 확장
 	&__background {
 		height: 6rem;
 		width: 6rem;
+
 		border-radius: 50%;
 		position: fixed;
 		top: 6.5rem;
 		right: 6.5rem;
-		background-image: radial-gradient(
-			$color-primary-light,
-			$color-primary-dark
-		);
+		background-image: radial-gradient($color-primary-light, $color-primary-dark);
 		z-index: 70;
-		transform: scale(100);
+		// transform: scale(100);
+		transition: transform .8s cubic-bezier(0.85, 0, 0.15, 1);
 	}
 	&__nav {
 		height: 100vh;
-		width: 100%;
+		// width: 100%;
+		
 		position: fixed;
 		top: 0;
-		right: 0;
+		// 나타나는 방향
+		left: 0;
 		z-index: 80;
 		text-align: center;
+		
+		opacity:0;
+		width: 0;
+		transition: all .8s;
 	}
 	&__list {
 		position: absolute;
@@ -42,31 +51,45 @@
 		transform: translate(-50%, -50%);
 		list-style: none;
 		text-transform: uppercase;
+		width: 100%;
 	}
 	&__item {
 		margin: 1rem;
 	}
 	&__link {
-        transition: all .4s;
+		transition: all 0.4s;
 		&:link,
 		&:visited {
+			display: inline-block;
+			list-style: none;
+			text-decoration: none;
 			font-size: 3rem;
 			font-weight: 300;
-            padding: 1rem 2rem;
+			padding: 1rem 2rem;
 			color: $color-white;
 			text-decoration: uppercase;
 			//
 			background-image: linear-gradient(
 				120deg,
-				orangered 0%,
-				orangered 50%,
+				transparent 0%,
+				transparent 60%,
 				#fff 50%
 			);
-			background-size: 220%;
-           
+			background-size: 300%;
 		}
-        &:hover, &:active {
-            background-position: 100%;
-        }
+		&:hover,
+		&:active {
+			background-position: 100%;
+			color: $color-primary-dark;
+		}
+	}
+
+	&__checkbox:checked ~ &__background {
+		transform: scale(100);
+	}
+
+	&__checkbox:checked ~ &__nav {
+		opacity: 1;
+		width: 100%;
 	}
 }
