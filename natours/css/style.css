@@ -552,16 +552,24 @@ body {
     flex-basis: 66.66%;
     padding: 3rem 5rem; }
   .popup__img {
-    display: inline-block;
-    width: 100%;
-    height: auto; }
+    display: block;
+    width: 100%; }
   .popup__text {
     font-size: 1.4rem;
-    margin-bottom: 4rem; }
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    -moz-column-rule: 1px solid #eee;
+    -ms-column-rule: 1px solid #eee;
+    -webkit-column-rule: 1px solid #eee;
+    hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto; }
   .popup__box {
     display: flex;
-    align-items: center;
-    justify-content: center; }
+    align-items: center; }
 
 .row {
   max-width: 114rem;
