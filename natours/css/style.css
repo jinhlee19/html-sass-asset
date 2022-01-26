@@ -117,6 +117,9 @@ body {
 .u-margin-bottom {
   margin-bottom: 8rem !important; }
 
+.u-margin-bottom-xs {
+  margin-bottom: 1rem !important; }
+
 .u-margin-bottom-sm {
   margin-bottom: 1.5rem !important; }
 
@@ -540,14 +543,25 @@ body {
     transform: translate(-50%, -50%);
     width: 75%;
     background-color: #fff;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px; }
   .popup__left {
-    flex: 1 1 33% !important; }
+    flex-basis: 33.33%;
+    line-height: 0; }
   .popup__right {
-    flex: 1 0 66% !important; }
+    flex-basis: 66.66%;
+    padding: 3rem 5rem; }
   .popup__img {
-    display: block;
-    width: 100%; }
+    display: inline-block;
+    width: 100%;
+    height: auto; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem; }
+  .popup__box {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 .row {
   max-width: 114rem;
