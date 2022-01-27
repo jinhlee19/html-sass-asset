@@ -1,11 +1,25 @@
 @charset "UTF-8";
+/*
+0 - 600px: Mobile
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+1200 - 1800px: is where our nor]mal styles apply.
+1800px + : Big Desktop
+*/
+/*
+$breakpoint argument choices:
+- mobile
+- tablet-port
+- tablet-land
+- desktop
+*/
 * {
   margin: 0;
   padding: 0; }
 
 *,
 *::after,
-**::before {
+*::before {
   margin: 0;
   padding: 0;
   /* !!! box-sizing의 기본을 상속으로 둠으로써 body에 있는 box-sizing으로 하위 요소 및 자식에게 물려주도록 한다. 
@@ -14,6 +28,9 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 600px) {
+    html {
+      font-size: 50%; } }
 
 body {
   /* no borders or paddings added - sizing as it is */
@@ -535,7 +552,10 @@ body {
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 99; }
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s; }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -544,7 +564,10 @@ body {
     width: 75%;
     background-color: #fff;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
-    border-radius: 3px; }
+    border-radius: 3px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all .5s .2s; }
   .popup__left {
     flex-basis: 33.33%;
     line-height: 0; }
@@ -570,6 +593,24 @@ body {
   .popup__box {
     display: flex;
     align-items: center; }
+  .popup:target {
+    visibility: visible;
+    opacity: 1; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close {
+    position: absolute; }
+    .popup__close:link, .popup__close:visited {
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      color: #333;
+      line-height: 1; }
+    .popup__close:hover {
+      color: #7ed56f; }
 
 .row {
   max-width: 114rem;

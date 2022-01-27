@@ -1,15 +1,56 @@
 @mixin clearfix {
-    &::after {
-        content: "";
-        display: table; // 클리어픽스의 표준 display값 참고.
-        clear: both;
-    }
+	&::after {
+		content: "";
+		display: table; // 클리어픽스의 표준 display값 참고.
+		clear: both;
+	}
 }
 // clearfix 과정 - &::after -> content: ""; -> display: table; (standard), clear: both;
 
 @mixin absCenter {
-    position:absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+// @mixin mobile-version {
+// 	@media (max-width: 600px) {
+// 		@content;
+// 	}
+// }
+
+// Media Query Manager
+/*
+0 - 600px: Mobile
+600 - 900px: Tablet portrait
+900 - 1200px: Tablet landscape
+1200 - 1800px: is where our nor]mal styles apply.
+1800px + : Big Desktop
+*/
+
+/*
+$breakpoint argument choices:
+- mobile
+- tablet-port
+- tablet-land
+- desktop
+*/
+
+@mixin responsive($breakpoint) {
+	@if $breakpoint == mobile {
+		@media (max-width: 600px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-port {
+		@media (max-width: 900px) {
+			@content;
+		}
+	}
+	@if $breakpoint == tablet-land {
+		@media (max-width: 1200px){
+		@content;
+	}
+}
 }

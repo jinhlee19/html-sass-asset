@@ -57,7 +57,9 @@
 					<span class="heading-primary--main">Outdoors</span>
 					<span class="heading-primary--sub">is where life happens</span>
 				</h1>
-				<a href="" class="btn btn--white btn--animated">Discover our tours</a>
+				<a href="#section-tours" class="btn btn--white btn--animated"
+					>Discover our tours</a
+				>
 			</div>
 		</header>
 		<main>
@@ -149,7 +151,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section-tours">
+			<section class="section-tours" id="section-tours">
 				<div class="u-center-text u-margin-bottom-big">
 					<h2 class="heading-secondary">Most Popular Tours</h2>
 				</div>
@@ -180,7 +182,7 @@
 										<p class="card__price-only">Only</p>
 										<p class="card__price-value">$297</p>
 									</div>
-									<a href="" class="btn btn--white">Book now!</a>
+									<a href="#popup" class="btn btn--white">Book now!</a>
 								</div>
 							</div>
 						</div>
@@ -211,7 +213,7 @@
 										<p class="card__price-only">Only</p>
 										<p class="card__price-value">$297</p>
 									</div>
-									<a href="" class="btn btn--white">Book now!</a>
+									<a href="#popup" class="btn btn--white">Book now!</a>
 								</div>
 							</div>
 						</div>
@@ -222,9 +224,9 @@
 								<div class="card__picture card__picture--3">&nbsp;</div>
 								<h4 class="card__heading">
 									<!-- 이건 card__heading의 child라기보단 heading-sepan 이라는 개별적인 element로 취급해야한다. -->
-									<span class="card__heading-span card__heading-span--3"
-										>The Snow Adventurer</span
-									>
+									<span class="card__heading-span card__heading-span--3">
+										The Snow Adventurer
+									</span>
 								</h4>
 								<div class="card__details">
 									<ul>
@@ -242,7 +244,7 @@
 										<p class="card__price-only">Only</p>
 										<p class="card__price-value">$297</p>
 									</div>
-									<a href="" class="btn btn--white">Book now!</a>
+									<a href="#popup" class="btn btn--white">Book now!</a>
 								</div>
 							</div>
 						</div>
@@ -422,7 +424,7 @@
 				</div>
 			</div>
 		</footer>
-		<div class="popup">
+		<div class="popup" id="popup">
 			<div class="popup__content">
 				<div class="popup__box">
 					<div class="popup__left">
@@ -431,10 +433,27 @@
 					</div>
 
 					<div class="popup__right">
-						<h2 class="heading-secondary u-margin-bottom-sm">Start booking now</h2>
-						<h2 class="heading-tertiary u-margin-bottom-xs">Important &ndash; please read these terms before booking</h2>
+
+						<a href="#section-tours" class="popup__close">
+							&times;
+						</a>
+
+						<h2 class="heading-secondary u-margin-bottom-sm">
+							Start booking now
+						</h2>
+						<h2 class="heading-tertiary u-margin-bottom-xs">
+							Important &ndash; please read these terms before booking
+						</h2>
 						<p class="popup__text">
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga, porro perspiciatis! Impedit mollitia quibusdam ipsum eveniet veniam molestiae. Reprehenderit error fugiat obcaecati consectetur quidem nihil doloribus molestias nisi ut eveniet at dolorem nam cupiditate optio, doloremque vitae. Eligendi ut labore expedita, maiores possimus et quibusdam consequuntur laudantium facilis aperiam laboriosam animi quae quos ab aliquid, asperiores sint quaerat tempore eos, nesciunt ratione iure molestias inventore magnam! Incidunt ipsum totam nam?
+							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga,
+							porro perspiciatis! Impedit mollitia quibusdam ipsum eveniet
+							veniam molestiae. Reprehenderit error fugiat obcaecati consectetur
+							quidem nihil doloribus molestias nisi ut eveniet at dolorem nam
+							cupiditate optio, doloremque vitae. Eligendi ut labore expedita,
+							maiores possimus et quibusdam consequuntur laudantium facilis
+							aperiam laboriosam animi quae quos ab aliquid, asperiores sint
+							quaerat tempore eos, nesciunt ratione iure molestias inventore
+							magnam! Incidunt ipsum totam nam?
 						</p>
 						<a href="#" class="btn btn--green">Book now</a>
 					</div>
