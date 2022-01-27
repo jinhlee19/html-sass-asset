@@ -1,7 +1,6 @@
 // Solution 1 - Mixin 최상단으로 배치
 
 @import "abstracts/mixins";
-@import "base/base";
 
 @import "abstracts/functions";
 @import "abstracts/variables";
@@ -25,3 +24,5 @@
 @import "layout/navigation";
 @import "layout/footer";
 @import "layout/header";
+
+@import "base/base";

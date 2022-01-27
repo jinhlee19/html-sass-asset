@@ -9,7 +9,6 @@
 // 	}
 // 	@include clearfix;
 
-	
 // 	////////////////////////////////////////////////////////////////////////
 // 	////// Calc Part - Float
 
@@ -57,22 +56,32 @@
 ////// Flex
 
 .row {
+	@include break(md) {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
 	// viewport가 충분하지 않을경우 가능한 공간을 100%의 값으로 채운다.
-	max-width: $grid-width;
-	// background-color: #eee;
+	// max-width: $grid-width;
 	margin: 0 auto;
-	// color: #fff;
 	&:not(:last-child) {
 		margin-bottom: $gutter-vertical;
+		@include break(md){
+			margin-bottom: $gutter-vertical-sm;
+		}
 	}
 	margin-top: 5rem;
 	height: 100%;
-    [class^="col-"] {
+	[class^="col-"] {
 		// background-color: orangered;
 		&:not(:last-child) {
 			margin-right: $gutter-horizontal;
+			@include break(md){
+				margin-right: 0;
+				margin-bottom: $gutter-vertical-sm;
+			}
 		}
-    }
+	} 
 	display: flex;
 	& div {
 		flex: 1;

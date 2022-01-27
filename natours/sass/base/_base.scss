@@ -16,7 +16,7 @@
 }
 
 html {
-	// This defines what 1rem is. 
+	// This defines what 1rem is.
 	// 1rem = 10px | 10px /16px = 62.5%
 	font-size: 62.5%;
 
@@ -24,12 +24,12 @@ html {
 	// @include mobile-version {
 	// 	font-size: 50%;
 	// }
-	
+
 	// tablet-port 와 중복되므로 삭제함.
 	// @include responsive(mobile) {
 	// 	font-size: 50%;
 	// }
-	
+
 	// 	순서 기억할것 낮은 것부터 높은 순으로 씌워준다. max-width의 순서이므로 포함 영역이 "이하일 때"**
 	// @include break(lg) {
 	// 	font-size: 62.5%;
@@ -47,4 +47,7 @@ html {
 body {
 	/* no borders or paddings added - sizing as it is */
 	box-sizing: border-box;
+	@include break(lg) {
+		padding: 0;
+	}
 }

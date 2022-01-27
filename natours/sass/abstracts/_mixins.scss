@@ -14,12 +14,6 @@
 	transform: translate(-50%, -50%);
 }
 
-// @mixin mobile-version {
-// 	@media (max-width: 600px) {
-// 		@content;
-// 	}
-// }
-
 // Media Query Manager
 /*
 0 - 600px: Mobile
@@ -27,17 +21,40 @@
 900 - 1200px: Tablet landscape
 1200 - 1800px: is where our nor]mal styles apply.
 1800px + : Big Desktop
+
+$breakpoint argument choices:
+- mobile: sm
+- tablet-port: md
+- desktop: lg
+
+Process: Base + typography > general layout + grid > page layout > componenets
 */
 
-/*
-$breakpoint argument choices:
-- mobile
-- tablet-port
-- tablet-land
-- desktop
-*/
 // 미디어 쿼리는 rem, em 등이 루트 폰트 사이즈가 아닌 브라우저 폰트(16px)의 영향을 받는다.
 // 1em = 16px 기준으로 미디어 쿼리 기준을 잡아준다.
+// breakpoint 는 3개로 잡았지만 sm과 md 둘다 50% 주기 때문에 bases에는 md와 lg만 적용.
+
+$breakpoints: (
+	sm: 37.5em,
+	// 600px mobile
+	md: 56.25em,
+	// 900px tablet
+	lg: 75em
+    // 1200px desktop
+);
+@mixin break($size) {
+	// map over breakpoints and use value of passed in size
+	@media screen and (max-width: map-get($breakpoints, $size)) {
+		@content;
+	}
+}
+
+
+
+
+
+
+
 
 // @mixin responsive($breakpoint) {
 // 	// 600px / 16 = 37.5
@@ -65,15 +82,9 @@ $breakpoint argument choices:
 // 		}
 // 	}
 // }
-// breakpoint 는 3개로 잡았지만 sm과 md 둘다 50% 주기 때문에 bases에는 md와 lg만 적용.
-$breakpoints: (
-    sm: 37.5em, // 600px
-    md: 56.25em, // 900px
-    lg: 75em // 1200px
-);
-@mixin break($size) {
-    // map over breakpoints and use value of passed in size
-    @media screen and (max-width: map-get($breakpoints, $size)) {
-        @content
-   }
-}
+
+// @mixin mobile-version {
+// 	@media (max-width: 600px) {
+// 		@content;
+// 	}
+// }
