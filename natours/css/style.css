@@ -154,22 +154,31 @@ body {
   margin-top: -20vh; }
 
 .section-features {
-  padding: 20rem 0;
+  padding: 25rem 0;
   background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/nat-4.jpg);
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -14rem; }
   .section-features > * {
     transform: skewY(7deg); }
+  @media screen and (max-width: 56.25em) {
+    .section-features {
+      padding: 30rem 0; } }
 
 .section-tours {
   background-color: #f7f7f7;
   padding: 25rem 0 15rem 0;
   margin-top: -10rem; }
+  @media screen and (max-width: 56.25em) {
+    .section-tours {
+      padding: 20rem 0 15rem 0; } }
 
 .section-stories {
   padding: 15rem;
   position: relative; }
+  @media screen and (max-width: 56.25em) {
+    .section-stories {
+      padding: 10rem 0; } }
 
 .section-book {
   padding: 15rem 0;
@@ -775,6 +784,9 @@ body {
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
+    @media screen and (max-width: 37.5em) {
+      .footer__logo-box {
+        margin-bottom: 4rem; } }
   .footer__logo {
     width: 15rem;
     height: auto; }
@@ -873,12 +885,15 @@ body {
 
 html {
   font-size: 62.5%; }
-  @media screen and (max-width: 75em) {
+  @media screen and (max-width: 37.5em) {
     html {
-      font-size: 56.25%; } }
+      font-size: 50%; } }
   @media screen and (max-width: 56.25em) {
     html {
       font-size: 50%; } }
+  @media screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
 
 body {
   /* no borders or paddings added - sizing as it is */
