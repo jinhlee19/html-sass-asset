@@ -58,10 +58,6 @@ body {
   text-transform: uppercase;
   /* 애니메이션 마지막에 흔들리는 현상 방지 -> backface-visibility: hidden; */
   margin-bottom: 6rem; }
-  @media screen and (max-width: 37.5em) {
-    .heading-primary {
-      letter-spacing: 1rem;
-      font-family: 5rem; } }
   .heading-primary--main {
     display: block;
     font-size: 6rem;
@@ -78,6 +74,10 @@ body {
     animation-timing-function: ease-out;
     /* 애니메이션 반복 */
     /* animation-iteration-count: 3; */ }
+    @media screen and (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -603,20 +603,23 @@ body {
       color: #7ed56f; }
 
 .row {
+  max-width: 114rem;
   margin: 0 auto;
   margin-top: 5rem;
   height: 100%;
   display: flex; }
-  @media screen and (max-width: 56.25em) {
-    .row {
-      display: flex;
-      flex-direction: column;
-      align-items: stretch; } }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
     @media screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
+  @media screen and (max-width: 56.25em) {
+    .row {
+      max-width: 70rem;
+      padding: 0 3px; } }
+  @media screen and (max-width: 37.5em) {
+    .row {
+      max-width: 50rem; } }
   .row [class^="col-"]:not(:last-child) {
     margin-right: 6rem; }
     @media screen and (max-width: 56.25em) {
@@ -625,6 +628,11 @@ body {
         margin-bottom: 6rem; } }
   .row div {
     flex: 1; }
+  @media screen and (max-width: 56.25em) {
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch; } }
 
 .navigation__checkbox {
   display: none; }
@@ -641,6 +649,14 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
   text-align: center;
   cursor: pointer; }
+  @media screen and (max-width: 56.25em) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
+  @media screen and (max-width: 37.5em) {
+    .navigation__button {
+      top: 3rem;
+      right: 3rem; } }
 
 .navigation__background {
   height: 6rem;
@@ -652,6 +668,14 @@ body {
   background-image: radial-gradient(#55c57a, #28b485);
   z-index: 70;
   transition: transform 1s cubic-bezier(0.7, -0.48, 0, 1.37); }
+  @media screen and (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem; } }
+  @media screen and (max-width: 37.5em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -740,6 +764,14 @@ body {
   padding: 10rem 0;
   font-size: 1.2rem;
   color: #f7f7f7; }
+  @media screen and (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0 !important;
+      margin: 0 !important;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: stretch; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -749,9 +781,26 @@ body {
   .footer__navigation {
     border-top: 1px solid #777;
     padding-top: 2rem;
-    display: inline-block; }
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch; }
+    @media screen and (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100% !important; } }
+    @media screen and (max-width: 37.5em) {
+      .footer__navigation {
+        width: 100% !important; } }
   .footer__list {
     list-style: none; }
+    @media screen and (max-width: 37.5em) {
+      .footer__list {
+        width: 100% !important; } }
+    @media screen and (max-width: 56.25em) {
+      .footer__list {
+        width: 100% !important;
+        display: flex;
+        justify-content: stretch;
+        align-items: stretch; } }
   .footer__item {
     display: inline-block; }
     .footer__item:not(:last-child) {
@@ -771,6 +820,9 @@ body {
     border-top: 1px solid #777;
     padding-top: 2rem;
     width: 80%; }
+    @media screen and (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100% !important; } }
 
 .header {
   height: 95vh;
@@ -780,6 +832,7 @@ body {
   background-position: top;
   /* clip-path: 각 x,y 포인트를 시계방향으로 */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* position으로 logo-box의 기준을 준다. */
   position: relative; }
   .header__logo-box {
@@ -787,6 +840,10 @@ body {
     position: absolute;
     top: 4rem;
     left: 4rem; }
+  @media screen and (max-width: 37.5em) {
+    .header {
+      clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo {
     /* height만 잡아도 width 잡힘. 필요한 값만 올려줘도 사이징 ㅇㅋ */
     height: 3.5rem; }

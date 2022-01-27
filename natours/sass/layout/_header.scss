@@ -11,6 +11,7 @@
 	background-position: top;
 	/* clip-path: 각 x,y 포인트를 시계방향으로 */
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	/* position으로 logo-box의 기준을 준다. */
 	position: relative;
 	&__logo-box {
@@ -18,6 +19,11 @@
 		position: absolute;
 		top: 4rem;
 		left: 4rem;
+	}
+
+	@include break(sm) {
+		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 	}
 
 	&__logo {
@@ -31,8 +37,8 @@
 		position: absolute;
 		/* sinking 때문에 디자인적으로 살짝 뜨게 해줘야해서 40% - 안정감 */
 
-////////////////////////////////////////////////////////////////////////
-////// Calc Part
+		////////////////////////////////////////////////////////////////////////
+		////// Calc Part
 		top: 40%;
 		left: 50%;
 		/* background-color: red; */

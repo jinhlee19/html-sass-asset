@@ -14,10 +14,7 @@ body {
 	// backface-visibility: hidden;
 
 	margin-bottom: 6rem;
-	@include break(sm){
-		letter-spacing: 1rem;
-		font-family: 5rem;
-	}
+	
 	&--main {
 		display: block;
 		font-size: 6rem;
@@ -36,6 +33,10 @@ body {
 		animation-timing-function: ease-out;
 		/* 애니메이션 반복 */
 		/* animation-iteration-count: 3; */
+		@include break(sm){
+			letter-spacing: 1rem;
+			font-size: 5rem;
+		}
 	}
 	&--sub {
 		display: block;
@@ -47,6 +48,7 @@ body {
 			letter-spacing: 1rem;
 		}
 	}
+	
 }
 
 .heading-secondary {
