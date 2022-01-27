@@ -39,29 +39,41 @@ $breakpoint argument choices:
 // 미디어 쿼리는 rem, em 등이 루트 폰트 사이즈가 아닌 브라우저 폰트(16px)의 영향을 받는다.
 // 1em = 16px 기준으로 미디어 쿼리 기준을 잡아준다.
 
-@mixin responsive($breakpoint) {
-	// 600px / 16 = 37.5
-	@if $breakpoint == mobile {
-		@media (max-width: 37.5em) {
-			@content;
-		}
-	}
-	// 900px / 16 = 52.25
-	@if $breakpoint == tablet-port {
-		@media (max-width: 56.25em) {
-			@content;
-		}
-	}
-	// 1200px
-	@if $breakpoint == tablet-land {
-		@media (max-width: 75em) {
-			@content;
-		}
-	}
-	// 1800px
-	@if $breakpoint == desktop {
-		@media (max-width: 112.5em) {
-			@content;
-		}
-	}
+// @mixin responsive($breakpoint) {
+// 	// 600px / 16 = 37.5
+// 	@if $breakpoint == mobile {
+// 		@media (max-width: 37.5em) {
+// 			@content;
+// 		}
+// 	}
+// 	// 900px / 16 = 52.25
+// 	@if $breakpoint == tablet-port {
+// 		@media (max-width: 56.25em) {
+// 			@content;
+// 		}
+// 	}
+// 	// 1200px
+// 	@if $breakpoint == tablet-land {
+// 		@media (max-width: 75em) {
+// 			@content;
+// 		}
+// 	}
+// 	// 1800px
+// 	@if $breakpoint == desktop {
+// 		@media (max-width: 112.5em) {
+// 			@content;
+// 		}
+// 	}
+// }
+// breakpoint 는 3개로 잡았지만 sm과 md 둘다 50% 주기 때문에 bases에는 md와 lg만 적용.
+$breakpoints: (
+    sm: 37.5em, // 600px
+    md: 56.25em, // 900px
+    lg: 75em // 1200px
+);
+@mixin break($size) {
+    // map over breakpoints and use value of passed in size
+    @media screen and (max-width: map-get($breakpoints, $size)) {
+        @content
+   }
 }
