@@ -132,9 +132,15 @@ body {
 
 .u-margin-bottom-md {
   margin-bottom: 4rem !important; }
+  @media screen and (max-width: 56.25em) {
+    .u-margin-bottom-md {
+      margin-bottom: 3rem !important; } }
 
 .u-margin-bottom-lg {
   margin-bottom: 8rem !important; }
+  @media screen and (max-width: 56.25em) {
+    .u-margin-bottom-lg {
+      margin-bottom: 3rem !important; } }
 
 .u-margin-top-sm {
   margin-top: 4rem !important; }
@@ -622,13 +628,14 @@ body {
     @media screen and (max-width: 56.25em) {
       .row:not(:last-child) {
         margin-bottom: 6rem; } }
+  @media screen and (max-width: 37.5em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 2rem !important; } }
   @media screen and (max-width: 56.25em) {
     .row {
       max-width: 70rem;
       padding: 0 3px; } }
-  @media screen and (max-width: 37.5em) {
-    .row {
-      max-width: 50rem; } }
   .row [class^="col-"]:not(:last-child) {
     margin-right: 6rem; }
     @media screen and (max-width: 56.25em) {

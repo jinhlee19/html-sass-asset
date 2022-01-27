@@ -67,12 +67,13 @@
 		}
 	}
 	
+	@include break(sm) {
+		max-width: 50rem;
+		padding: 0 2rem!important;
+	}
 	@include break(md) {
 		max-width: 70rem;
 		padding: 0 3px;
-	}
-	@include break(sm) {
-		max-width: 50rem;
 	}
 
 	margin-top: 5rem;

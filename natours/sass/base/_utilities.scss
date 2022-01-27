@@ -17,9 +17,15 @@
 
 .u-margin-bottom-md {
 	margin-bottom: 4rem !important;
+	@include break(md) {
+		margin-bottom: 3rem !important;
+	}
 }
 .u-margin-bottom-lg {
 	margin-bottom: 8rem !important;
+	@include break(md) {
+		margin-bottom: 3rem !important;
+	}
 }
 
 .u-margin-top-sm {
