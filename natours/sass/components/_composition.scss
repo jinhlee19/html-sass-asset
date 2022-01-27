@@ -1,4 +1,7 @@
 .composition {
+	@include break(md) {
+		display: flex;
+	}
 	position: relative;
 	&__photo {
 		width: 55%;
@@ -8,17 +11,36 @@
 		z-index: 10;
 		transition: all 0.2s;
         outline-offset: 2rem;
+
+		@include break(md) {
+			display: flex;
+			position: static;
+			width: 33.33%;
+			box-shadow: 0 1.5rem 3rem rgba(#000, .2);
+		}
+
 		&--p1 {
 			left: 0;
 			top: -2rem;
+			@include break(md){
+				transform: scale(1.1);
+			}
 		} 
 		&--p2 {
 			left: 40%;
 			top: 2rem;
+			@include break(md){
+				transform: scale(1.2);
+				z-index: 20;
+			}
 		}
 		&--p3 {
 			left: 20%;
 			top: 10rem;
+			@include break(md){
+				top: -1rem;
+				transform: scale(1.1);
+			}
 		}
 		&:hover,
 		&:active {

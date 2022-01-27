@@ -21,17 +21,16 @@
 	}
 	margin-top: -14rem;
 	@include break(md) {
-		padding: 30rem 0;
+		padding: 10rem 0;
 	}
+	
 }
 
 .section-tours {
 	background-color: $color-grey-light-1;
 	padding: 25rem 0 15rem 0;
 	margin-top: -10rem;
-	@include break(md) {
-		padding: 20rem 0 15rem 0;
-	}
+
 }
 
 .section-stories {
