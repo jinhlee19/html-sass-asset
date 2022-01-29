@@ -385,7 +385,9 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__logo-box">
-				<img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+				<!-- 1. high-resolution choice 만들기: 레티나 등 고해상도에서 높은 픽셀 사용 -->
+				<img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x," alt="Full logo" class="footer__logo" />
+				
 			</div>
 			<div class="row">
 				<div class="col-1-of-2">
