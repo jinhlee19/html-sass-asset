@@ -16,10 +16,13 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-
 		width: 100%;
-
+		
 		backface-visibility: hidden;
+
+		// ** https://caniuse.com/ 에서 체크해보기 - safari에서 webkit으로 해줘야함.
+		-webkit-backface-visibility: hidden;
+		
 		transition: all 0.8s ease;
 
 		&--front {
