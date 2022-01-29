@@ -16,10 +16,13 @@
 	// backdrop-filter: blur(10px);
 	// -webkit-backdrop-filter: blur(10px);
 
+	// sass의 graceful degradation **
 	@supports (-webkit-backdrop-filter: blur(10px)) or
 		(backdrop-filter: blur(10px)) {
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
+		// backdrop-filter: blur(10px) sepia(100%) brightness(150%);
+		// -webkit-backdrop-filter: blur(10px) sepia(100%) brightness(200%);
 		background-color: rgba(#000, 0.7);
 	}
 
