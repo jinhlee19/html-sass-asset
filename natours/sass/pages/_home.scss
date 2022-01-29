@@ -61,9 +61,38 @@
 	border-radius: 3px;
 	box-shadow: 0 1.5rem 4rem rgba(#000, 0.35);
 	height: 50rem;
+	@include break(md){
+		background-image: linear-gradient(
+			105deg,
+			rgba(#fff, 0.9) 0%,
+			rgba(#fff, 0.9) 65%,
+			transparent 50%
+		),
+		url(../img/nat-10.jpg);
+		background-size: cover;
+	}
+	@include break(sm) {
+		background-image: linear-gradient(
+			to right,
+			rgba(#fff, 0.9) 0%,
+			rgba(#fff, 0.9) 100%,
+			transparent 50%
+		),
+		url(../img/nat-10.jpg);
+		background-size: cover;
+	}
 
 	&__form {
 		width: 50%;
 		padding: 5rem;
+		@include break(md){
+			width: 70%;
+			
+		}
+		@include break(sm){
+			width: 100%;
+		}
 	}
+
+	
 }

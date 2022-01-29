@@ -26,6 +26,9 @@
 		&::-webkit-input-placeholder {
 			color: $color-grey-dark-2;
 		}
+		@include break(sm) {
+			width:100%;
+		}
 	}
 
 	&__label {
@@ -47,6 +50,11 @@
 	&__radio-group {
 		width: 40%;
 		display: inline-block;
+		@include break(sm) {
+			width:100%;
+			margin-bottom: 2rem;
+
+		}
 	}
     &__radio-input {
         display: none;

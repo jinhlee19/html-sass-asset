@@ -9,7 +9,7 @@
 
 	// transform이 일부에만 들어가는 현상 - 값이 계산되지 않고 덮어씌워짐 ->
 	transform: skewX(-12deg);
-
+	
 	& > * {
 		transform: skewX(12deg);
 	}
@@ -29,6 +29,9 @@
 		float: left;
 		transform: translateX(-3rem) skewX(12deg);
         position:relative;
+		@include break(sm) {
+			transform: translate(-3rem) skewX(0);
+		}
 
 	}
 	&__img {
@@ -40,6 +43,9 @@
 	}
 	&__text {
 		transform: skewX(12deg);
+		@include break(sm) {
+			transform:skewX(0deg);
+		}
 	}
 	&__caption {
 		position: absolute;
@@ -54,6 +60,7 @@
 		transition: all .5s;
         // fixing small glitch.
         backface-visibility: hidden;
+		
 	}
 	// ANIMATION effect - story__shape 2
 	&:hover &__caption {
@@ -65,4 +72,13 @@
         // filter 다양한 효과 테스트해보기 **
         filter: blur(3px) brightness(90%);
     }
+	@include break(md) {
+		width: 85%;
+		padding: 4rem;
+		padding-left: 7rem;
+	}
+	@include break(sm) {
+		transform: skewX(0);
+		
+	}
 }
