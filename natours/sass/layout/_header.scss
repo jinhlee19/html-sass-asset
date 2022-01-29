@@ -3,9 +3,9 @@
 	background-image: linear-gradient(
 			to right bottom,
 			rgba($color-primary-light, 0.8),
-			rgba($color-primary-dark, 0.8)
+			rgba(red, 0.8)
 		),
-		url(../img/hero.jpg);
+		url(../img/hero-small.jpg);
 	background-size: cover;
 	/* 이미지를 상단 기준으로 고정 - 뷰포트 하단의 이미지만 변경 또는 Crop됨  */
 	background-position: top;
@@ -19,6 +19,25 @@
 		position: absolute;
 		top: 4rem;
 		left: 4rem;
+	}
+	// if resolution is higher than 192dpi & min-width 600
+	@media(min-resolution: 192dpi) and (min-width: 600px), (min-width:1140px){
+		background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba($color-primary-dark, 0.8)
+		),
+		// 변화를 확인하기 위해 red로.. 
+		url(../img/hero.jpg);
+	}
+	@media(min-width: 2000px){
+		background-image: linear-gradient(
+			to right bottom,
+			rgba($color-primary-light, 0.8),
+			rgba(blue, 0.8)
+		),
+		// 변화를 확인하기 위해 red로.. 
+		url(../img/hero.jpg);
 	}
 
 	@include break(sm) {
