@@ -90,18 +90,41 @@
 					</div>
 					<div class="col-1-of-2">
 						<div class="composition">
+							<!-- Resolution Switching - imform browser to the width of the images. -->
+							<!--
+							Note 정리
 							<img
-								src="img/nat-1-large.jpg"
-								alt="photo-1"
+								-- 1) Step1: 두 버전의 이미지를 크키별로 설정 300px일 경우와 1000px일 경우에 보여줄 이미지 
+								srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+								-- 2) Step2: 900px 이하일경우 20%로, 600일때는 30퍼센트로 보여준다. 그외는 300px을 기본으로 하는듯?  
+								sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, max-width: 300px"
+								alt="Photo 1"
 								class="composition__photo composition__photo--p1"
-							/><img
-								src="img/nat-2-large.jpg"
-								alt="photo-2"
+								srcset을 인식하지 못할경우 사용할 이미지
+								src="img/nat-1-large.jpg"
+							/>
+							-->
+
+							<img
+								srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+								sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, max-width: 300px"
+								alt="Photo 1"
+								class="composition__photo composition__photo--p1"
+								src="img/nat-1-large.jpg"
+							/>
+							<img
+								srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+								sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, max-width: 300px"
+								alt="Photo 2"
 								class="composition__photo composition__photo--p2"
-							/><img
-								src="img/nat-3-large.jpg"
-								alt="photo-3"
+								src="img/nat-2-large.jpg"
+							/>
+							<img
+								srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+								sizes="(max-width: 900px) 20vw, (max-width:600px) 30vw, max-width: 300px"
+								alt="Photo 3"
 								class="composition__photo composition__photo--p3"
+								src="img/nat-3-large.jpg"
 							/>
 						</div>
 					</div>
@@ -388,7 +411,10 @@
 				<picture class="footer__logo">
 					<!-- Art Direction - different images with different viewport source. -->
 					<source
-						srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+						srcset="
+							img/logo-green-small-1x.png 1x,
+							img/logo-green-small-2x.png 2x
+						"
 						media="(max-width: 37.5em)"
 					/>
 					<img
