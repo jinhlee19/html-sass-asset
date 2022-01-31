@@ -13,7 +13,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	@media only screen and (max-width: $break-xs) {
+		order: 1;
+		flex: 0 0 100%;
+		background-color: $color-grey-light-2;
+	}
 	&__input {
 		font-family: inherit;
 		font-size: inherit;
@@ -113,8 +117,8 @@
 	text-decoration: none;
 	// ul, li - _base.scss 에서 없애주기.
 	margin-top: 3.5rem;
-	@media only screen and (max-width: $break-sm){
-		display:flex;
+	@media only screen and (max-width: $break-sm) {
+		display: flex;
 		margin: 0;
 	}
 
@@ -122,13 +126,12 @@
 		position: relative;
 		&:not(:last-child) {
 			margin-bottom: 0.5rem;
-			@media only screen and (max-width: $break-sm){
+			@media only screen and (max-width: $break-sm) {
 				margin-bottom: 0;
 			}
 		}
-		@media only screen and (max-width: $break-sm){
-			flex:1;
-			
+		@media only screen and (max-width: $break-sm) {
+			flex: 1;
 		}
 	}
 	&__item::before {
@@ -166,9 +169,13 @@
 		// z-index는 포지션 있어야 사용가능.
 		position: relative;
 		z-index: 10;
-		@media only screen and (max-width: $break-sm){
+		@media only screen and (max-width: $break-md) {
 			justify-content: center;
-			padding:2rem;	
+			padding: 2rem;
+		}
+		@media only screen and (max-width: $break-sm) {
+			flex-direction: column;
+			padding: 1.5rem 0.5rem;
 		}
 	}
 	&__icon {
@@ -178,6 +185,12 @@
 		// current Color gets a color from inherited color property. color tester below
 		// color: blue;
 		fill: currentColor;
+		@media only screen and (max-width: $break-sm) {
+			margin-right: 0;
+			margin-bottom: 0.5 rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 	}
 }
 
@@ -186,8 +199,8 @@
 	color: $color-grey-light-4;
 	text-align: center;
 	padding: 2.5rem;
-	@media only screen and (max-width: $break-sm){
-		display:none;
+	@media only screen and (max-width: $break-sm) {
+		display: none;
 	}
 }
 
@@ -214,6 +227,10 @@
 		text-transform: uppercase;
 		letter-spacing: 1px;
 		padding: 1.5rem 3rem;
+		@media only screen and (max-width: $break-sm) {
+			font-size: 1.8rem;
+			padding: 1.25rem 2rem;
+		}
 	}
 
 	&__stars {
@@ -249,15 +266,6 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0 2.25rem;
-	}
-	&__rating-average {
-		font-size: 2.25rem;
-		font-weight: 300;
-		margin-bottom: -3px;
-	}
-	&__rating-count {
-		font-size: 0.8rem;
-		text-transform: uppercase;
 	}
 }
 
@@ -308,8 +316,6 @@
 // Paragraph
 .paragraph:not(:last-child) {
 	margin-bottom: 2rem;
-	
-
 }
 
 //////////////////////////////////////////////
@@ -382,7 +388,7 @@
 	background-image: url(../img/SVG/);
 	position: relative;
 	overflow: hidden;
-	@media only screen and (max-width: $break-sm){
+	@media only screen and (max-width: $break-sm) {
 		padding: 2rem;
 		margin-bottom: 3rem;
 	}
@@ -418,7 +424,30 @@
 		color: $color-primary;
 		font-size: 2.2rem;
 		font-weight: 400;
+		margin-left: 3rem;
+		padding: 0 2.25rem;
+		align-items: stretch;
+		@media only screen and (max-width: $break-sm) {
+			padding: 0 1.5rem;
+		}
 	}
+
+	&__rating-average {
+		font-size: 2.25rem;
+		font-weight: 300;
+		margin-bottom: -3px;
+		@media only screen and (max-width: $break-sm) {
+			font-size: 1.8rem;
+		}
+	}
+	&__rating-count {
+		font-size: 0.8rem;
+		font-weight: 300;
+		@media only screen and (max-width: $break-sm) {
+			font-size: 0.5rem;
+		}
+	}
+
 	&::before {
 		content: "\201C";
 		position: absolute;
@@ -443,8 +472,8 @@
 		text-transform: uppercase;
 		margin-bottom: 2.5rem;
 	}
-	@media only screen and (max-width: $break-sm){
-		padding:2.5rem 0;
+	@media only screen and (max-width: $break-sm) {
+		padding: 2.5rem 0;
 	}
 }
 

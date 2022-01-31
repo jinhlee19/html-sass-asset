@@ -21,6 +21,13 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	@media only screen and (max-width: $break-xs){
+		flex-wrap: wrap;	
+		height: 11rem;
+		align-content: space-around;
+		
+	}
+
 }
 
 .content {
@@ -50,9 +57,11 @@
 	padding: 4.5rem;
 	background-color: $color-grey-light-1;
 	border-bottom: $line;
-	@media only screen and (max-width: $break-sm){
+	@media only screen and (max-width: $break-md){
 		padding: 3rem;
+		flex-direction: column;
 	}
+
 }
 
 .description {
@@ -61,9 +70,13 @@
 	padding: 3rem;
 	flex: 0 0 60%;
 	margin-right: 4.5rem;   
-	@media only screen and (max-width: $break-sm){
+	@media only screen and (max-width: $break-md){
 		padding: 2rem;
 		margin-right: 3rem;
+	}
+	@media only screen and (max-width: $break-sm){
+		margin-right: 0;
+		margin-bottom: 3rem;
 	}
 }
 
