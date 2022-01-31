@@ -25,6 +25,9 @@
 
 .content {
 	display: flex;
+	@media only screen and (max-width: $break-sm) {
+		flex-direction: column;
+	}
 }
 
 .sidebar {
@@ -47,6 +50,9 @@
 	padding: 4.5rem;
 	background-color: $color-grey-light-1;
 	border-bottom: $line;
+	@media only screen and (max-width: $break-sm){
+		padding: 3rem;
+	}
 }
 
 .description {
@@ -55,6 +61,10 @@
 	padding: 3rem;
 	flex: 0 0 60%;
 	margin-right: 4.5rem;   
+	@media only screen and (max-width: $break-sm){
+		padding: 2rem;
+		margin-right: 3rem;
+	}
 }
 
 .user-reviews {

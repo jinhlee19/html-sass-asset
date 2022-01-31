@@ -113,11 +113,22 @@
 	text-decoration: none;
 	// ul, li - _base.scss 에서 없애주기.
 	margin-top: 3.5rem;
+	@media only screen and (max-width: $break-sm){
+		display:flex;
+		margin: 0;
+	}
 
 	&__item {
 		position: relative;
 		&:not(:last-child) {
 			margin-bottom: 0.5rem;
+			@media only screen and (max-width: $break-sm){
+				margin-bottom: 0;
+			}
+		}
+		@media only screen and (max-width: $break-sm){
+			flex:1;
+			
 		}
 	}
 	&__item::before {
@@ -155,6 +166,10 @@
 		// z-index는 포지션 있어야 사용가능.
 		position: relative;
 		z-index: 10;
+		@media only screen and (max-width: $break-sm){
+			justify-content: center;
+			padding:2rem;	
+		}
 	}
 	&__icon {
 		width: 1.75rem;
@@ -171,6 +186,9 @@
 	color: $color-grey-light-4;
 	text-align: center;
 	padding: 2.5rem;
+	@media only screen and (max-width: $break-sm){
+		display:none;
+	}
 }
 
 //////////////////////////////////////////////
@@ -290,6 +308,8 @@
 // Paragraph
 .paragraph:not(:last-child) {
 	margin-bottom: 2rem;
+	
+
 }
 
 //////////////////////////////////////////////
@@ -337,6 +357,7 @@
 		margin-right: auto;
 	}
 	&__friends {
+		display: flex;
 	}
 	&__photo {
 		box-sizing: content-box; // default box-sizing
@@ -345,7 +366,7 @@
 		border-radius: 50%;
 		border: 3px solid #fff;
 		&:not(:last-child) {
-			margin-right: -1.5rem;
+			margin-right: -2rem;
 		}
 	}
 }
@@ -361,6 +382,10 @@
 	background-image: url(../img/SVG/);
 	position: relative;
 	overflow: hidden;
+	@media only screen and (max-width: $break-sm){
+		padding: 2rem;
+		margin-bottom: 3rem;
+	}
 	&__text {
 		font-size: 1.4rem;
 		margin-bottom: 2rem;
@@ -417,6 +442,9 @@
 		font-weight: 300;
 		text-transform: uppercase;
 		margin-bottom: 2.5rem;
+	}
+	@media only screen and (max-width: $break-sm){
+		padding:2.5rem 0;
 	}
 }
 
