@@ -11,7 +11,12 @@
 }
 html {
 	box-sizing: border-box;
-	font-size: 62.5%;
+	font-size: 62.5%; // 1rem = 10px
+
+	@media only screen and (max-width: $break-lg){
+		font-size: 50%; // 1rem = 8px
+		// font-size를 바꾸고 나면, rem값이 변화해서 마진이 다시 생겨있음. -> 
+	}
 }
 
 body {

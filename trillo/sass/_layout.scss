@@ -5,6 +5,12 @@
 	// rgba의,0.3앞에 hex값이나 텍스트 컬러도 들어갈 수 있다.
 	box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 	min-height: 50rem;
+
+	@media only screen and (max-width: $break-lg){
+		margin:0;
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 .header {
